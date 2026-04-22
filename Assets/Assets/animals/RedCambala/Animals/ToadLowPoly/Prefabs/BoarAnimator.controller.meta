@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 55576e173a6f94342bfacdb98121ac6b
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 262076
+  packageName: Wild boar
+  packageVersion: 1.0
+  assetPath: Assets/RedCambala/Animals/ToadLowPoly/Prefabs/BoarAnimator.controller
+  uploadId: 620418

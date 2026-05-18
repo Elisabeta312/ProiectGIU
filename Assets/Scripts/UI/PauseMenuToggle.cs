@@ -4,6 +4,7 @@ public class PauseMenuToggle : MonoBehaviour
 {
     public GameObject PauseMenu;
     public GameObject DiscoveredAnimalsMenu;
+    public GameObject TutorialScreen;
 
     public MonoBehaviour playerMovement;
     public MonoBehaviour mouseLook;
@@ -12,6 +13,7 @@ public class PauseMenuToggle : MonoBehaviour
 
     void Start()
     {
+        TutorialScreen.SetActive(true);
         DiscoveredAnimalsMenu.SetActive(false);
         SetPaused(false);
     }
@@ -20,6 +22,12 @@ public class PauseMenuToggle : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Escape))
         {
+            if (TutorialScreen.activeInHierarchy)
+            {
+                TutorialScreen.SetActive(false);
+                
+                return;
+            }
             if (DiscoveredAnimalsMenu.activeInHierarchy)
             {
                 DiscoveredAnimalsMenu.SetActive(false);
@@ -27,6 +35,23 @@ public class PauseMenuToggle : MonoBehaviour
             }
 
             SetPaused(!isPaused);
+        }
+
+        if (Input.GetKeyUp(KeyCode.T))
+        {
+            if (!TutorialScreen.activeInHierarchy)
+            {
+                TutorialScreen.SetActive(true);
+                
+                return;
+            }
+            else {
+                TutorialScreen.SetActive(false);
+                
+                return;
+            }
+
+            
         }
     }
 

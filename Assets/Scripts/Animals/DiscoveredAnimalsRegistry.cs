@@ -15,13 +15,18 @@ public static class DiscoveredAnimalsRegistry
     }
 
     [System.Serializable]
-    private class SaveData
+    private class JournalSaveData
     {
         public List<string> discoveredAnimals = new List<string>();
     }
 
     public static void Discover(string animalName)
     {
+        if (string.IsNullOrWhiteSpace(animalName))
+        {
+            return;
+        }
+
         if (!discoveredAnimals.Contains(animalName))
         {
             discoveredAnimals.Add(animalName);
@@ -31,12 +36,62 @@ public static class DiscoveredAnimalsRegistry
 
     public static bool IsDiscovered(string animalName)
     {
+        if (string.IsNullOrWhiteSpace(animalName))
+        {
+            return false;
+        }
+
         return discoveredAnimals.Contains(animalName);
+    }
+
+    public static List<string> GetDiscoveredAnimals()
+    {
+        return new List<string>(discoveredAnimals);
+    }
+
+    public static void SetDiscoveredAnimals(List<string> animals)
+    {
+        discoveredAnimals.Clear();
+
+        if (animals != null)
+        {
+            foreach (string animalName in animals)
+            {
+                if (!string.IsNullOrWhiteSpace(animalName))
+                {
+                    discoveredAnimals.Add(animalName);
+                }
+            }
+        }
+
+        ApplyDiscoveryStateToSceneAnimals();
+        Save();
+    }
+
+    public static void ClearOnlyMemory()
+    {
+        discoveredAnimals.Clear();
+        ApplyDiscoveryStateToSceneAnimals();
+    }
+
+    public static void ApplyDiscoveryStateToSceneAnimals()
+    {
+        DiscoverableAnimal[] animalsInScene = Object.FindObjectsByType<DiscoverableAnimal>(FindObjectsSortMode.None);
+
+        foreach (DiscoverableAnimal animal in animalsInScene)
+        {
+            if (animal == null)
+            {
+                continue;
+            }
+
+            animal.discovered = IsDiscovered(animal.animalName);
+        }
     }
 
     public static void Save()
     {
-        SaveData data = new SaveData();
+        JournalSaveData data = new JournalSaveData();
         data.discoveredAnimals = new List<string>(discoveredAnimals);
 
         string json = JsonUtility.ToJson(data, true);
@@ -50,13 +105,23 @@ public static class DiscoveredAnimalsRegistry
         if (!File.Exists(SavePath))
         {
             discoveredAnimals = new HashSet<string>();
+            ApplyDiscoveryStateToSceneAnimals();
             return;
         }
 
         string json = File.ReadAllText(SavePath);
-        SaveData data = JsonUtility.FromJson<SaveData>(json);
+        JournalSaveData data = JsonUtility.FromJson<JournalSaveData>(json);
 
-        discoveredAnimals = new HashSet<string>(data.discoveredAnimals);
+        if (data == null || data.discoveredAnimals == null)
+        {
+            discoveredAnimals = new HashSet<string>();
+        }
+        else
+        {
+            discoveredAnimals = new HashSet<string>(data.discoveredAnimals);
+        }
+
+        ApplyDiscoveryStateToSceneAnimals();
     }
 
     public static void ResetSave()
@@ -67,5 +132,9 @@ public static class DiscoveredAnimalsRegistry
         {
             File.Delete(SavePath);
         }
+
+        ApplyDiscoveryStateToSceneAnimals();
+
+        Debug.Log("Journal reset. New game starts with no discovered animals.");
     }
 }

@@ -708,9 +708,10 @@ GameObject:
   - component: {fileID: 139766768}
   - component: {fileID: 139766770}
   - component: {fileID: 139766771}
+  - component: {fileID: 139766772}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -750,7 +751,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.04314583, y: 0.7489485, z: -0.0490049, w: 0.6594036}
   m_LocalPosition: {x: 25.08, y: 4, z: 68.8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1589245845}
@@ -791,6 +792,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimalDiscovery
   discoveryDistance: 3
   legacyKey: 101
+--- !u!114 &139766772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139766767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0fe9664df356a64087cc1f08d42d002, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
 --- !u!1 &146826943
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,6 +1083,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 283838688}
   m_SourcePrefab: {fileID: 100100000, guid: 4ecab060b0afb5d4db61f7f1311b9e24, type: 3}
+--- !u!64 &197495079 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 8292168133376400554, guid: 6dbb202767a616f4084f458b0e582192, type: 3}
+  m_PrefabInstance: {fileID: 1249953153}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &200880601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1563,6 +1581,47 @@ MonoBehaviour:
   animalsPage2: {fileID: 1470713756}
   buttonNext: {fileID: 225421507}
   buttonPrev: {fileID: 1700489765}
+--- !u!1 &263156057 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3507746843320673371, guid: 4f9eebc977b93d641a58f15164948196, type: 3}
+  m_PrefabInstance: {fileID: 1076834936}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &263156061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263156057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 153b02090ba086749aa72a21baeaa8df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GoatSheepInvisiblePenSpawner
+  spawnId: Goat
+  defaultSpawnCount: 2
+  animalPrefab: {fileID: 263156057}
+  penCollider: {fileID: 1902466771}
+  terrain: {fileID: 1143006925}
+  useTerrainHeight: 1
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  yOffset: 0
+  rayStartHeight: 80
+  rayDistance: 200
+  spawnOnlyOnNewGame: 1
+  allowDirectSceneTesting: 1
+  hideTemplateAtRuntime: 1
+  removePenFromSpawnedAnimals: 1
+  moveSpeed: 1.15
+  rotationSpeed: 5
+  waitMinSeconds: 2
+  waitMaxSeconds: 5
+  destinationTolerance: 1.2
+  idleStateName: Idle
+  walkStateName: walk_forward
+  animationFadeTime: 0.2
 --- !u!1001 &266216375
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2780,6 +2839,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1665000017619231737, guid: 016f4a7b359d4d448a0c5cfbb05fa8ca, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 785d48cb3e2f08343812aa976b5891b1, type: 2}
+    - target: {fileID: 1665000017619231737, guid: 016f4a7b359d4d448a0c5cfbb05fa8ca, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1665000017619231737, guid: 016f4a7b359d4d448a0c5cfbb05fa8ca, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4754508615900690819, guid: 016f4a7b359d4d448a0c5cfbb05fa8ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 53.210236
@@ -4324,7 +4395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4604972887363670765, guid: 89c7d56787878bd45a97b081a69b5b43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.621
+      value: 2.32
       objectReference: {fileID: 0}
     - target: {fileID: 4604972887363670765, guid: 89c7d56787878bd45a97b081a69b5b43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4478,6 +4549,59 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 364008a861c837840b9ebe98c806959c, type: 3}
+--- !u!1 &680961150
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 680961151}
+  - component: {fileID: 680961152}
+  m_Layer: 0
+  m_Name: GoatInvisiblePen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &680961151
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680961150}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.24, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1151056651}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &680961152
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680961150}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 18, y: 0, z: 24}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &692647480
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7092,7 +7216,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3507746843320673371, guid: 4f9eebc977b93d641a58f15164948196, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 263156061}
   m_SourcePrefab: {fileID: 100100000, guid: 4f9eebc977b93d641a58f15164948196, type: 3}
 --- !u!1001 &1080815826
 PrefabInstance:
@@ -7155,6 +7282,59 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b52cc1ab8767b154c8bbc5a31e8419c8, type: 3}
+--- !u!1 &1087238069
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1087238070}
+  - component: {fileID: 1087238071}
+  m_Layer: 0
+  m_Name: GoatInvisiblePen (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1087238070
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087238069}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 202.6, y: -0.9968846, z: 0.70000076}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1249953158}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1087238071
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087238069}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 100, y: 0, z: 100}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1097262158
 GameObject:
   m_ObjectHideFlags: 0
@@ -7349,7 +7529,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4669005887754503719, guid: 7c609d199e833e64e80264c75b43688d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.621
+      value: 2.27
       objectReference: {fileID: 0}
     - target: {fileID: 4669005887754503719, guid: 7c609d199e833e64e80264c75b43688d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7847,27 +8027,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3084024626696190684, guid: f5c8b6dc56a8e634a8f2a0cfbee2941d, type: 3}
   m_PrefabInstance: {fileID: 1544464464}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &1151056647
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1151056646}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1151056648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7882,6 +8041,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DiscoverableAnimal
   animalName: Goat
   discovered: 0
+--- !u!4 &1151056651 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3084024626696190678, guid: f5c8b6dc56a8e634a8f2a0cfbee2941d, type: 3}
+  m_PrefabInstance: {fileID: 1544464464}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1151056657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151056646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 153b02090ba086749aa72a21baeaa8df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GoatSheepInvisiblePenSpawner
+  spawnId: Goat
+  defaultSpawnCount: 2
+  animalPrefab: {fileID: 1151056646}
+  penCollider: {fileID: 680961152}
+  terrain: {fileID: 1143006925}
+  useTerrainHeight: 1
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  yOffset: 0
+  rayStartHeight: 80
+  rayDistance: 200
+  spawnOnlyOnNewGame: 1
+  allowDirectSceneTesting: 1
+  hideTemplateAtRuntime: 1
+  removePenFromSpawnedAnimals: 1
+  moveSpeed: 1.15
+  rotationSpeed: 5
+  waitMinSeconds: 2
+  waitMaxSeconds: 5
+  destinationTolerance: 1.2
+  idleStateName: Idle
+  walkStateName: walk_forward
+  animationFadeTime: 0.2
 --- !u!1 &1151806831
 GameObject:
   m_ObjectHideFlags: 0
@@ -8717,11 +8917,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3928661417354363243, guid: 6dbb202767a616f4084f458b0e582192, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33
+      value: 33.7
       objectReference: {fileID: 0}
     - target: {fileID: 3928661417354363243, guid: 6dbb202767a616f4084f458b0e582192, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 5.6
       objectReference: {fileID: 0}
     - target: {fileID: 3928661417354363243, guid: 6dbb202767a616f4084f458b0e582192, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8757,7 +8957,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3928661417354363243, guid: 6dbb202767a616f4084f458b0e582192, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 1087238070}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3928661417354363241, guid: 6dbb202767a616f4084f458b0e582192, type: 3}
       insertIndex: -1
@@ -8765,6 +8968,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3928661417354363241, guid: 6dbb202767a616f4084f458b0e582192, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1249953155}
+    - targetCorrespondingSourceObject: {fileID: 3928661417354363241, guid: 6dbb202767a616f4084f458b0e582192, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1249953159}
   m_SourcePrefab: {fileID: 100100000, guid: 6dbb202767a616f4084f458b0e582192, type: 3}
 --- !u!1 &1249953154 stripped
 GameObject:
@@ -8806,6 +9012,48 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1249953158 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3928661417354363243, guid: 6dbb202767a616f4084f458b0e582192, type: 3}
+  m_PrefabInstance: {fileID: 1249953153}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1249953159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249953154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eea70d8ae822fb4191e6a35676d0a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalInvisiblePenSpawner
+  spawnId: Goat
+  defaultSpawnCount: 20
+  animalPrefab: {fileID: 1249953154}
+  penCollider: {fileID: 197495079}
+  terrain: {fileID: 415840614}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  useTerrainHeight: 1
+  yOffset: 0
+  rayStartHeight: 80
+  rayDistance: 200
+  spawnOnlyOnNewGame: 1
+  allowDirectSceneTesting: 1
+  hideTemplateAtRuntime: 1
+  removePenFromSpawnedAnimals: 1
+  addRoamerToSpawnedAnimals: 1
+  roamSpeed: 1.8
+  rotationSpeed: 6
+  waitMinSeconds: 1
+  waitMaxSeconds: 4
+  destinationTolerance: 1.2
+  controlAnimator: 1
+  movingBoolParameter: isWalking
+  speedFloatParameter: Speed
 --- !u!1 &1254159746
 GameObject:
   m_ObjectHideFlags: 0
@@ -9228,6 +9476,112 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DiscoverableAnimal
   animalName: Kitty
   discovered: 0
+--- !u!1 &1287170066
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1287170068}
+  - component: {fileID: 1287170067}
+  m_Layer: 0
+  m_Name: GoatInvisiblePen (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1287170067
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287170066}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 50, y: 0, z: 50}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1287170068
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287170066}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.043619405, z: 0, w: 0.9990483}
+  m_LocalPosition: {x: 64.44767, y: 3.0031154, z: 64.78239}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1297396118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1297396120}
+  - component: {fileID: 1297396119}
+  m_Layer: 0
+  m_Name: GoatInvisiblePen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1297396119
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297396118}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 18, y: 0, z: 24}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1297396120
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297396118}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.043619405, z: 0, w: 0.9990483}
+  m_LocalPosition: {x: 64.44767, y: 3.0031154, z: 64.78239}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1320296453
 GameObject:
   m_ObjectHideFlags: 0
@@ -10319,7 +10673,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.06125001, y: 0.897743}
   m_AnchorMax: {x: 0.06125001, y: 0.897743}
-  m_AnchoredPosition: {x: 0.000061035156, y: -78.2}
+  m_AnchoredPosition: {x: 0, y: -78.20001}
   m_SizeDelta: {x: 24.8006, y: 35.943}
   m_Pivot: {x: 0.50000197, y: 0.5}
 --- !u!114 &1465071960
@@ -11094,9 +11448,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8185963723261686820, guid: c36cdfacfaab1584c887c605bc8e7b2f, type: 3}
+      propertyPath: m_Name
+      value: Goat_White
+      objectReference: {fileID: 0}
     - target: {fileID: 3084024626696190678, guid: f5c8b6dc56a8e634a8f2a0cfbee2941d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 59.9
+      value: 61.22
       objectReference: {fileID: 0}
     - target: {fileID: 3084024626696190678, guid: f5c8b6dc56a8e634a8f2a0cfbee2941d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11104,11 +11462,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3084024626696190678, guid: f5c8b6dc56a8e634a8f2a0cfbee2941d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 64.38
+      value: 64.5
       objectReference: {fileID: 0}
     - target: {fileID: 3084024626696190678, guid: f5c8b6dc56a8e634a8f2a0cfbee2941d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.92387956
+      value: 0.9990483
       objectReference: {fileID: 0}
     - target: {fileID: 3084024626696190678, guid: f5c8b6dc56a8e634a8f2a0cfbee2941d, type: 3}
       propertyPath: m_LocalRotation.x
@@ -11116,7 +11474,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3084024626696190678, guid: f5c8b6dc56a8e634a8f2a0cfbee2941d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.38268343
+      value: -0.043619405
       objectReference: {fileID: 0}
     - target: {fileID: 3084024626696190678, guid: f5c8b6dc56a8e634a8f2a0cfbee2941d, type: 3}
       propertyPath: m_LocalRotation.z
@@ -11128,7 +11486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3084024626696190678, guid: f5c8b6dc56a8e634a8f2a0cfbee2941d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 45
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 3084024626696190678, guid: f5c8b6dc56a8e634a8f2a0cfbee2941d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -11138,21 +11496,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: SK_Goat_white
       objectReference: {fileID: 0}
-    - target: {fileID: 8185963723261686820, guid: c36cdfacfaab1584c887c605bc8e7b2f, type: 3}
-      propertyPath: m_Name
-      value: Goat_White
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 2612599305641743322, guid: 37ab5ee15ddf4eb4d85c2d2b26fc8276, type: 3}
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3084024626696190678, guid: f5c8b6dc56a8e634a8f2a0cfbee2941d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 680961151}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3084024626696190684, guid: f5c8b6dc56a8e634a8f2a0cfbee2941d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1151056648}
     - targetCorrespondingSourceObject: {fileID: 3084024626696190684, guid: f5c8b6dc56a8e634a8f2a0cfbee2941d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1151056647}
+      addedObject: {fileID: 1151056657}
   m_SourcePrefab: {fileID: 100100000, guid: f5c8b6dc56a8e634a8f2a0cfbee2941d, type: 3}
 --- !u!1001 &1546470280
 PrefabInstance:
@@ -12493,12 +12850,48 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1656672445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656672436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 153b02090ba086749aa72a21baeaa8df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GoatSheepInvisiblePenSpawner
+  spawnId: Goat
+  defaultSpawnCount: 2
+  animalPrefab: {fileID: 1656672436}
+  penCollider: {fileID: 1297396119}
+  terrain: {fileID: 1143006925}
+  useTerrainHeight: 1
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  yOffset: 0
+  rayStartHeight: 80
+  rayDistance: 200
+  spawnOnlyOnNewGame: 1
+  allowDirectSceneTesting: 1
+  hideTemplateAtRuntime: 1
+  removePenFromSpawnedAnimals: 1
+  moveSpeed: 1.15
+  rotationSpeed: 5
+  waitMinSeconds: 2
+  waitMaxSeconds: 5
+  destinationTolerance: 1.2
+  idleStateName: Idle
+  walkStateName: walk_forward
+  animationFadeTime: 0.2
 --- !u!1001 &1663406146
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13145,6 +13538,75 @@ MonoBehaviour:
           m_StringArgument: Fox
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1001 &1730706391
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 8c07cc1bc95569d4f8aa2f7a7284d414, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 53.298443
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8c07cc1bc95569d4f8aa2f7a7284d414, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.003115
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8c07cc1bc95569d4f8aa2f7a7284d414, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 62.33036
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8c07cc1bc95569d4f8aa2f7a7284d414, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8c07cc1bc95569d4f8aa2f7a7284d414, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8c07cc1bc95569d4f8aa2f7a7284d414, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8c07cc1bc95569d4f8aa2f7a7284d414, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8c07cc1bc95569d4f8aa2f7a7284d414, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8c07cc1bc95569d4f8aa2f7a7284d414, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8c07cc1bc95569d4f8aa2f7a7284d414, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8c07cc1bc95569d4f8aa2f7a7284d414, type: 3}
+      propertyPath: m_Name
+      value: yt
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 8c07cc1bc95569d4f8aa2f7a7284d414, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 785d48cb3e2f08343812aa976b5891b1, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 8c07cc1bc95569d4f8aa2f7a7284d414, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 8c07cc1bc95569d4f8aa2f7a7284d414, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8c07cc1bc95569d4f8aa2f7a7284d414, type: 3}
 --- !u!1001 &1754055324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13729,6 +14191,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8185963723970810583, guid: c36cdfacfaab1584c887c605bc8e7b2f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1656672441}
+    - targetCorrespondingSourceObject: {fileID: 8185963723970810583, guid: c36cdfacfaab1584c887c605bc8e7b2f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1656672445}
   m_SourcePrefab: {fileID: 100100000, guid: c36cdfacfaab1584c887c605bc8e7b2f, type: 3}
 --- !u!1 &1839542778
 GameObject:
@@ -14196,6 +14661,59 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c59246f075efff4eacdd481ad75421a, type: 3}
+--- !u!1 &1902466770
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1902466772}
+  - component: {fileID: 1902466771}
+  m_Layer: 0
+  m_Name: GoatInvisiblePen (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1902466771
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902466770}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 18, y: 0, z: 24}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1902466772
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902466770}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.043619405, z: 0, w: 0.9990483}
+  m_LocalPosition: {x: 64.44767, y: 3.0031154, z: 64.78239}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1906367006
 GameObject:
   m_ObjectHideFlags: 0
@@ -14322,7 +14840,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4677745771901032, guid: c737dd230724d61469e1c672cf47ed9e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677745771901032, guid: c737dd230724d61469e1c672cf47ed9e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677745771901032, guid: c737dd230724d61469e1c672cf47ed9e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4677745771901032, guid: c737dd230724d61469e1c672cf47ed9e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14374,6 +14900,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1588090451174212, guid: c737dd230724d61469e1c672cf47ed9e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1910982387}
+    - targetCorrespondingSourceObject: {fileID: 1588090451174212, guid: c737dd230724d61469e1c672cf47ed9e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1910982391}
   m_SourcePrefab: {fileID: 100100000, guid: c737dd230724d61469e1c672cf47ed9e, type: 3}
 --- !u!1 &1910982386 stripped
 GameObject:
@@ -14415,6 +14944,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DiscoverableAnimal
   animalName: Rabbit
   discovered: 0
+--- !u!114 &1910982391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910982386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eea70d8ae822fb4191e6a35676d0a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalInvisiblePenSpawner
+  spawnId: Goat
+  defaultSpawnCount: 10
+  animalPrefab: {fileID: 1910982386}
+  penCollider: {fileID: 1287170067}
+  terrain: {fileID: 1143006925}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  useTerrainHeight: 1
+  yOffset: 0
+  rayStartHeight: 80
+  rayDistance: 200
+  spawnOnlyOnNewGame: 1
+  allowDirectSceneTesting: 1
+  hideTemplateAtRuntime: 1
+  removePenFromSpawnedAnimals: 1
+  addRoamerToSpawnedAnimals: 1
+  roamSpeed: 1.8
+  rotationSpeed: 6
+  waitMinSeconds: 1
+  waitMaxSeconds: 4
+  destinationTolerance: 1.2
+  controlAnimator: 1
+  movingBoolParameter: isWalking
+  speedFloatParameter: Speed
 --- !u!1 &1941927111 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2181399723018873099, guid: 7f9a2a426a3aea94d96ad27d297b06ff, type: 3}
@@ -14617,6 +15183,53 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32695badf63a47443a7aa20d8d5e9e7a, type: 3}
+--- !u!1 &1990174509
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1990174511}
+  - component: {fileID: 1990174510}
+  m_Layer: 0
+  m_Name: SaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1990174510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990174509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62fd36c2edc27be4081154a5a432b419, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameSaveManager
+  player: {fileID: 139766767}
+  savesMenuSceneName: SavesMenu
+  mainMenuSceneName: UIMenu
+--- !u!4 &1990174511
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990174509}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 31.61202, y: 14.667, z: -125.81811}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2007437897
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14686,8 +15299,9 @@ GameObject:
   - component: {fileID: 2032076497}
   - component: {fileID: 2032076496}
   - component: {fileID: 2032076495}
+  - component: {fileID: 2032076498}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: SaveExitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14757,9 +15371,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: NewGameButton, Assembly-CSharp
-        m_MethodName: NextScene
+      - m_Target: {fileID: 2032076498}
+        m_TargetAssemblyTypeName: SaveExitButtonHandler, Assembly-CSharp
+        m_MethodName: SaveAndExit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14807,6 +15421,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2032076493}
   m_CullTransparentMesh: 1
+--- !u!114 &2032076498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032076493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5660aa707212b9498b071860cdc2e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveExitButtonHandler
 --- !u!1001 &2033297361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15945,11 +16571,14 @@ SceneRoots:
   - {fileID: 1107761287}
   - {fileID: 1274904045}
   - {fileID: 1076834936}
+  - {fileID: 1902466772}
   - {fileID: 1890654052}
   - {fileID: 1645458327}
   - {fileID: 1455393007}
   - {fileID: 1910982385}
+  - {fileID: 1287170068}
   - {fileID: 1832835485}
+  - {fileID: 1297396120}
   - {fileID: 1544464464}
   - {fileID: 1249953153}
   - {fileID: 276419934}
@@ -15959,6 +16588,7 @@ SceneRoots:
   - {fileID: 1478603590}
   - {fileID: 692647480}
   - {fileID: 705364580}
+  - {fileID: 1990174511}
   - {fileID: 266216375}
   - {fileID: 393220680}
   - {fileID: 1546478774}
@@ -16034,3 +16664,4 @@ SceneRoots:
   - {fileID: 77901452}
   - {fileID: 152299274}
   - {fileID: 938621584}
+  - {fileID: 1730706391}

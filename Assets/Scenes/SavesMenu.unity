@@ -223,7 +223,6 @@ GameObject:
   - component: {fileID: 309542660}
   - component: {fileID: 309542659}
   - component: {fileID: 309542658}
-  - component: {fileID: 309542661}
   m_Layer: 5
   m_Name: Save 3 Button
   m_TagString: Untagged
@@ -345,18 +344,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 309542655}
   m_CullTransparentMesh: 1
---- !u!114 &309542661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 309542655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f5ebf67363998a4a86e1ed0c763a439, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MySavedGamesMenuSceneManager
 --- !u!1 &310855470
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,6 +432,7 @@ GameObject:
   - component: {fileID: 737587323}
   - component: {fileID: 737587322}
   - component: {fileID: 737587321}
+  - component: {fileID: 737587326}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -556,6 +544,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &737587326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737587320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990026461fc86ba41b67df014bc735d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveMenuController
+  titleText: {fileID: 1541324291}
+  slot1Button: {fileID: 863311573}
+  slot2Button: {fileID: 1412244941}
+  slot3Button: {fileID: 309542658}
+  slot1Text: {fileID: 947540966}
+  slot2Text: {fileID: 1022600200}
+  slot3Text: {fileID: 1828730750}
+  backButton: {fileID: 898187453}
+  mainMenuSceneName: UIMenu
+  forceSaveMode: 0
 --- !u!1 &792273857
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,7 +653,6 @@ GameObject:
   - component: {fileID: 863311575}
   - component: {fileID: 863311574}
   - component: {fileID: 863311573}
-  - component: {fileID: 863311576}
   m_Layer: 5
   m_Name: Save 1 Button
   m_TagString: Untagged
@@ -765,18 +774,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863311570}
   m_CullTransparentMesh: 1
---- !u!114 &863311576
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863311570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f5ebf67363998a4a86e1ed0c763a439, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MySavedGamesMenuSceneManager
 --- !u!1 &898187451
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,7 +1572,6 @@ GameObject:
   - component: {fileID: 1412244943}
   - component: {fileID: 1412244942}
   - component: {fileID: 1412244941}
-  - component: {fileID: 1412244944}
   m_Layer: 5
   m_Name: Save 2 Button
   m_TagString: Untagged
@@ -1697,18 +1693,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1412244938}
   m_CullTransparentMesh: 1
---- !u!114 &1412244944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1412244938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f5ebf67363998a4a86e1ed0c763a439, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MySavedGamesMenuSceneManager
 --- !u!1 &1541324289
 GameObject:
   m_ObjectHideFlags: 0

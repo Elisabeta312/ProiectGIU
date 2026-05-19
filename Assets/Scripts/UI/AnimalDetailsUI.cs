@@ -10,6 +10,10 @@ public class AnimalDetailsUI : MonoBehaviour
     public TMP_Text animalTitle;
     public TMP_Text animalDescription;
 
+    [Header("Optional Locked Feedback")]
+    public TMP_Text lockedMessageText;
+    public float lockedMessageDuration = 1.5f;
+
     [Header("Animal Sprites")]
     public Sprite wolfSprite;
     public Sprite bearSprite;
@@ -33,20 +37,75 @@ public class AnimalDetailsUI : MonoBehaviour
     public Sprite boarSprite;
     public Sprite deerSprite;
 
+    private Coroutine lockedMessageRoutine;
+
     void Awake()
     {
-        detailsPanel.SetActive(false);
+        if (detailsPanel != null)
+        {
+            detailsPanel.SetActive(false);
+        }
+
+        if (lockedMessageText != null)
+        {
+            lockedMessageText.gameObject.SetActive(false);
+        }
     }
 
     public void ShowAnimal(string animalName)
     {
-        detailsPanel.SetActive(true);
+        if (!DiscoveredAnimalsRegistry.IsDiscovered(animalName))
+        {
+            ShowLockedMessage();
+            return;
+        }
 
-        animalTitle.text = animalName;
-        animalDescription.text = GetDescription(animalName);
-        animalIcon.sprite = GetSprite(animalName);
+        if (detailsPanel != null)
+        {
+            detailsPanel.SetActive(true);
+        }
 
-        animalIcon.enabled = animalIcon.sprite != null;
+        if (animalTitle != null)
+        {
+            animalTitle.text = animalName;
+        }
+
+        if (animalDescription != null)
+        {
+            animalDescription.text = GetDescription(animalName);
+        }
+
+        if (animalIcon != null)
+        {
+            animalIcon.sprite = GetSprite(animalName);
+            animalIcon.enabled = animalIcon.sprite != null;
+        }
+    }
+
+    private void ShowLockedMessage()
+    {
+        if (lockedMessageText == null)
+        {
+            return;
+        }
+
+        if (lockedMessageRoutine != null)
+        {
+            StopCoroutine(lockedMessageRoutine);
+        }
+
+        lockedMessageRoutine = StartCoroutine(ShowLockedMessageRoutine());
+    }
+
+    private System.Collections.IEnumerator ShowLockedMessageRoutine()
+    {
+        lockedMessageText.text = "Discover this animal first.";
+        lockedMessageText.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(lockedMessageDuration);
+
+        lockedMessageText.gameObject.SetActive(false);
+        lockedMessageRoutine = null;
     }
 
     string GetDescription(string animalName)
@@ -143,6 +202,9 @@ public class AnimalDetailsUI : MonoBehaviour
 
     public void ClosePanel()
     {
-        detailsPanel.SetActive(false);
+        if (detailsPanel != null)
+        {
+            detailsPanel.SetActive(false);
+        }
     }
 }

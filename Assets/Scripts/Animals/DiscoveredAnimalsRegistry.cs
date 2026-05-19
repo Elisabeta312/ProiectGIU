@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using UnityEngine;
 using System.IO;
+using UnityEngine;
 
 public static class DiscoveredAnimalsRegistry
 {
@@ -68,12 +68,6 @@ public static class DiscoveredAnimalsRegistry
         Save();
     }
 
-    public static void ClearOnlyMemory()
-    {
-        discoveredAnimals.Clear();
-        ApplyDiscoveryStateToSceneAnimals();
-    }
-
     public static void ApplyDiscoveryStateToSceneAnimals()
     {
         DiscoverableAnimal[] animalsInScene = Object.FindObjectsByType<DiscoverableAnimal>(FindObjectsSortMode.None);
@@ -85,7 +79,7 @@ public static class DiscoveredAnimalsRegistry
                 continue;
             }
 
-            animal.discovered = IsDiscovered(animal.animalName);
+            animal.RefreshDiscoveryState();
         }
     }
 
@@ -134,7 +128,5 @@ public static class DiscoveredAnimalsRegistry
         }
 
         ApplyDiscoveryStateToSceneAnimals();
-
-        Debug.Log("Journal reset. New game starts with no discovered animals.");
     }
 }

@@ -17,3 +17,5 @@ UserSettings/
 *.opendb 
 *.VC.db 
 Thumbs.db 
+Saves Log/
+UpgradeLog*.htm

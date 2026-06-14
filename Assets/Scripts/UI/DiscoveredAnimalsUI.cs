@@ -13,6 +13,13 @@ public class DiscoveredAnimalsUI : MonoBehaviour
     public Image fishIcon;
     public Image clownFishIcon;
     public Image butterflyIcon;
+    public Image lizardIcon;
+    public Image batIcon;
+    public Image elephantIcon;
+    public Image kiwiIcon;
+    public Image waspIcon;
+    public Image guppyIcon;
+    public Image elkIcon;
 
     [Header("Page 2 Icons")]
     public Image spiderIcon;
@@ -24,6 +31,7 @@ public class DiscoveredAnimalsUI : MonoBehaviour
     public Image catIcon;
     public Image boarIcon;
     public Image deerIcon;
+    
 
     void OnEnable()
     {
@@ -41,6 +49,13 @@ public class DiscoveredAnimalsUI : MonoBehaviour
         SetIcon(fishIcon, "Fish");
         SetIcon(clownFishIcon, "Clown Fish");
         SetIcon(butterflyIcon, "Butterfly");
+        SetIcon(lizardIcon, "Lizard");
+        SetIcon(batIcon, "Bat");
+        SetIcon(elephantIcon, "Elephant");
+        SetIcon(kiwiIcon, "Kiwi");
+        SetIcon(waspIcon, "Wasp");
+        SetIcon(guppyIcon, "Guppy");
+        SetIcon(elkIcon, "Elk");
 
         SetIcon(spiderIcon, "Spider");
         SetIcon(spiderBlackIcon, "Spider Black");

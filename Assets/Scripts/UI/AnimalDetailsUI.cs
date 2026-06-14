@@ -28,6 +28,13 @@ public class AnimalDetailsUI : MonoBehaviour
     public Sprite fishSprite;
     public Sprite clownFishSprite;
     public Sprite butterflySprite;
+    public Sprite lizardSprite;
+    public Sprite batSprite;
+    public Sprite elephantSprite;
+    public Sprite kiwiSprite;
+    public Sprite waspSprite;
+    public Sprite guppySprite;
+    public Sprite elkSprite;
 
     public Sprite penguinSprite;
     public Sprite horseSprite;
@@ -146,6 +153,27 @@ public class AnimalDetailsUI : MonoBehaviour
         if (animalName == "Butterfly")
             return "Butterflies are colorful insects often found near flowers. They help pollinate plants and make the environment feel more alive.";
 
+        if (animalName == "Lizard")
+            return "Lizards are small reptiles that can live in warm areas, forests, and rocky places. They move quickly and use camouflage to stay safe from predators.";
+
+        if (animalName == "Bat")
+            return "Bats are the only mammals capable of true flight. They are active mainly at night and use echolocation to find their way and catch insects.";
+
+        if (animalName == "Elephant")
+            return "Elephants are the largest land animals in the world. They are intelligent, social, and use their trunks for feeding, drinking, and communication.";
+
+        if (animalName == "Kiwi")
+            return "Kiwis are small flightless birds native to New Zealand. They have a long beak and are mostly active during the night.";
+
+        if (animalName == "Wasp")
+            return "Wasps are flying insects known for their narrow bodies and ability to sting. They play an important role in controlling other insect populations.";
+
+        if (animalName == "Guppy")
+            return "Guppies are small freshwater fish famous for their bright colors and graceful swimming. They are popular in aquariums around the world.";
+
+        if (animalName == "Elk")
+            return "Elks are large members of the deer family. They live in forests and open grasslands and are known for the impressive antlers of the males.";
+
         if (animalName == "Penguin")
             return "Penguins are birds that cannot fly but are excellent swimmers. They live in cold regions and spend much of their time in the water.";
 
@@ -188,6 +216,13 @@ public class AnimalDetailsUI : MonoBehaviour
         if (animalName == "Fish") return fishSprite;
         if (animalName == "Clown Fish") return clownFishSprite;
         if (animalName == "Butterfly") return butterflySprite;
+        if (animalName == "Lizard") return lizardSprite;
+        if (animalName == "Bat") return batSprite;
+        if (animalName == "Elephant") return elephantSprite;
+        if (animalName == "Kiwi") return kiwiSprite;
+        if (animalName == "Wasp") return waspSprite;
+        if (animalName == "Guppy") return guppySprite;
+        if (animalName == "Elk") return elkSprite;
 
         if (animalName == "Penguin") return penguinSprite;
         if (animalName == "Horse") return horseSprite;

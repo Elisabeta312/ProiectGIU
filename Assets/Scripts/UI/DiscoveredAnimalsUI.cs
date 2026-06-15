@@ -32,7 +32,8 @@ public class DiscoveredAnimalsUI : MonoBehaviour
     public Image catIcon;
     public Image boarIcon;
     public Image deerIcon;
-    
+    public Image foxIcon;
+
 
     void OnEnable()
     {
@@ -68,6 +69,7 @@ public class DiscoveredAnimalsUI : MonoBehaviour
         SetIcon(catIcon, "Cat");
         SetIcon(boarIcon, "Boar");
         SetIcon(deerIcon, "Deer");
+        SetIcon(foxIcon, "Fox");
     }
 
     void SetIcon(Image icon, string animalName)

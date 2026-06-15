@@ -44,6 +44,7 @@ public class AnimalDetailsUI : MonoBehaviour
     public Sprite catSprite;
     public Sprite boarSprite;
     public Sprite deerSprite;
+    public Sprite foxSprite;
 
     private Coroutine lockedMessageRoutine;
 
@@ -199,6 +200,9 @@ public class AnimalDetailsUI : MonoBehaviour
         if (animalName == "Deer")
             return "Deer are graceful herbivores commonly found in forests and open fields. They are fast runners and use their hearing to detect danger.";
 
+        if (animalName == "Fox")
+            return "Foxes are clever and adaptable mammals that live in forests, grasslands, and mountain regions. They are known for their sharp senses, quick movements, and beautiful bushy tails.";
+
         if (animalName == "Bird")
             return "Birds are animals with feathers and wings. They can often be found in forests, near trees, or flying above open areas.";
 
@@ -236,6 +240,7 @@ public class AnimalDetailsUI : MonoBehaviour
         if (animalName == "Cat") return catSprite;
         if (animalName == "Boar") return boarSprite;
         if (animalName == "Deer") return deerSprite;
+        if (animalName == "Fox") return foxSprite;
 
         return null;
     }

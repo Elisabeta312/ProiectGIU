@@ -45,6 +45,16 @@ public class AnimalDetailsUI : MonoBehaviour
     public Sprite boarSprite;
     public Sprite deerSprite;
     public Sprite foxSprite;
+    public Sprite dodoSprite;
+    public Sprite paradiseParrotSprite;
+    public Sprite passengerPigeonSprite;
+    public Sprite commonSnipeSprite;
+    public Sprite goldenPloverSprite;
+    public Sprite starlingSprite;
+    public Sprite spangledCotingaSprite;
+    public Sprite greatTitSprite;
+    public Sprite macawSprite;
+    public Sprite greatAukSprite;
 
     private Coroutine lockedMessageRoutine;
 
@@ -203,6 +213,36 @@ public class AnimalDetailsUI : MonoBehaviour
         if (animalName == "Fox")
             return "Foxes are clever and adaptable mammals that live in forests, grasslands, and mountain regions. They are known for their sharp senses, quick movements, and beautiful bushy tails.";
 
+        if (animalName == "Dodo")
+            return "The dodo was a flightless bird that lived on the island of Mauritius. It became extinct because of hunting and the arrival of new animals brought by humans.";
+
+        if (animalName == "Paradise Parrot")
+            return "The paradise parrot was a colorful bird from Australia. It lived in grasslands and open forests, but it became extinct after habitat loss and other environmental changes.";
+
+        if (animalName == "Passenger Pigeon")
+            return "The passenger pigeon was once one of the most numerous birds in North America. It became extinct because of massive hunting and habitat destruction.";
+
+        if (animalName == "Common Snipe")
+            return "The common snipe is a small wading bird usually found in wetlands and marshes. It has a long straight beak used to search for food in soft ground.";
+
+        if (animalName == "Golden Plover")
+            return "The golden plover is a migratory bird known for its golden-spotted plumage. It usually lives in open fields, tundra, and coastal areas.";
+
+        if (animalName == "Starling")
+            return "The starling is a small, social bird known for its shiny dark feathers and its ability to imitate sounds. It often lives in groups and adapts well to different environments.";
+
+        if (animalName == "Spangled Cotinga")
+            return "The spangled cotinga is a colorful tropical bird native to the rainforests of South America. Males are known for their brilliant blue feathers and dark wings, making them one of the most striking birds of the Amazon.";
+
+        if (animalName == "Great Tit")
+            return "The great tit is a small songbird with a bright yellow chest and black head. It is active, curious, and often found in gardens, forests, and parks.";
+
+        if (animalName == "Blue and Yellow Macaw")
+            return "The blue and yellow macaw is a large, colorful parrot from South America. It is intelligent, social, and known for its bright blue and golden feathers.";
+
+        if (animalName == "Great Auk")
+            return "The great auk was a large flightless seabird that lived in the cold regions of the North Atlantic. It was an excellent swimmer and used its wings to move underwater, but it became extinct in the 19th century because of excessive hunting.";
+
         if (animalName == "Bird")
             return "Birds are animals with feathers and wings. They can often be found in forests, near trees, or flying above open areas.";
 
@@ -241,6 +281,16 @@ public class AnimalDetailsUI : MonoBehaviour
         if (animalName == "Boar") return boarSprite;
         if (animalName == "Deer") return deerSprite;
         if (animalName == "Fox") return foxSprite;
+        if (animalName == "Dodo") return dodoSprite;
+        if (animalName == "Paradise Parrot") return paradiseParrotSprite;
+        if (animalName == "Passenger Pigeon") return passengerPigeonSprite;
+        if (animalName == "Common Snipe") return commonSnipeSprite;
+        if (animalName == "Golden Plover") return goldenPloverSprite;
+        if (animalName == "Starling") return starlingSprite;
+        if (animalName == "Spangled Cotinga") return spangledCotingaSprite;
+        if (animalName == "Great Tit") return greatTitSprite;
+        if (animalName == "Blue and Yellow Macaw") return macawSprite;
+        if (animalName == "Great Auk") return greatAukSprite;
 
         return null;
     }

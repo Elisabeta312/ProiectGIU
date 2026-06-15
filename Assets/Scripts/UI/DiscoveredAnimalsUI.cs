@@ -33,6 +33,16 @@ public class DiscoveredAnimalsUI : MonoBehaviour
     public Image boarIcon;
     public Image deerIcon;
     public Image foxIcon;
+    public Image dodoIcon;
+    public Image paradiseParrotIcon;
+    public Image passengerPigeonIcon;
+    public Image commonSnipeIcon;
+    public Image goldenPloverIcon;
+    public Image starlingIcon;
+    public Image waxwingIcon;
+    public Image greatTitIcon;
+    public Image macawIcon;
+    public Image greatAukIcon;
 
 
     void OnEnable()
@@ -70,6 +80,16 @@ public class DiscoveredAnimalsUI : MonoBehaviour
         SetIcon(boarIcon, "Boar");
         SetIcon(deerIcon, "Deer");
         SetIcon(foxIcon, "Fox");
+        SetIcon(dodoIcon, "Dodo");
+        SetIcon(paradiseParrotIcon, "Paradise Parrot");
+        SetIcon(passengerPigeonIcon, "Passenger Pigeon");
+        SetIcon(commonSnipeIcon, "Common Snipe");
+        SetIcon(goldenPloverIcon, "Golden Plover");
+        SetIcon(starlingIcon, "Starling");
+        SetIcon(waxwingIcon, "Waxwing");
+        SetIcon(greatTitIcon, "Great Tit");
+        SetIcon(macawIcon, "Blue and Yellow Macaw");
+        SetIcon(greatAukIcon, "Great Auk");
     }
 
     void SetIcon(Image icon, string animalName)

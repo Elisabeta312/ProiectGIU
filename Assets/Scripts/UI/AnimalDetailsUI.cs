@@ -35,6 +35,7 @@ public class AnimalDetailsUI : MonoBehaviour
     public Sprite waspSprite;
     public Sprite guppySprite;
     public Sprite elkSprite;
+    public Sprite rattiSprite;
 
     public Sprite penguinSprite;
     public Sprite horseSprite;
@@ -174,6 +175,9 @@ public class AnimalDetailsUI : MonoBehaviour
         if (animalName == "Elk")
             return "Elks are large members of the deer family. They live in forests and open grasslands and are known for the impressive antlers of the males.";
 
+        if (animalName == "Ratti")
+            return "Rats are intelligent and adaptable small mammals found in many different environments. They are excellent climbers and can quickly explore new areas in search of food and shelter.";
+
         if (animalName == "Penguin")
             return "Penguins are birds that cannot fly but are excellent swimmers. They live in cold regions and spend much of their time in the water.";
 
@@ -223,6 +227,7 @@ public class AnimalDetailsUI : MonoBehaviour
         if (animalName == "Wasp") return waspSprite;
         if (animalName == "Guppy") return guppySprite;
         if (animalName == "Elk") return elkSprite;
+        if (animalName == "Ratti") return rattiSprite;
 
         if (animalName == "Penguin") return penguinSprite;
         if (animalName == "Horse") return horseSprite;

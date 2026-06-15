@@ -20,6 +20,7 @@ public class DiscoveredAnimalsUI : MonoBehaviour
     public Image waspIcon;
     public Image guppyIcon;
     public Image elkIcon;
+    public Image rattiIcon;
 
     [Header("Page 2 Icons")]
     public Image spiderIcon;
@@ -56,6 +57,7 @@ public class DiscoveredAnimalsUI : MonoBehaviour
         SetIcon(waspIcon, "Wasp");
         SetIcon(guppyIcon, "Guppy");
         SetIcon(elkIcon, "Elk");
+        SetIcon(rattiIcon, "Ratti");
 
         SetIcon(spiderIcon, "Spider");
         SetIcon(spiderBlackIcon, "Spider Black");

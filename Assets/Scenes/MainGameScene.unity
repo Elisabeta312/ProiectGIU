@@ -1385,7 +1385,7 @@ Transform:
   m_GameObject: {fileID: 139766767}
   serializedVersion: 2
   m_LocalRotation: {x: 0.01568493, y: 0.7459665, z: -0.017579656, w: 0.6655666}
-  m_LocalPosition: {x: 65, y: 17, z: 121}
+  m_LocalPosition: {x: 227, y: 6, z: 65}
   m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2281,6 +2281,7 @@ MonoBehaviour:
   waspIcon: {fileID: 1497795978}
   guppyIcon: {fileID: 1235702424}
   elkIcon: {fileID: 1327178337}
+  rattiIcon: {fileID: 1731352285}
   spiderIcon: {fileID: 2056106987}
   spiderBlackIcon: {fileID: 1054052088}
   penguinIcon: {fileID: 1881223160}
@@ -2326,6 +2327,7 @@ MonoBehaviour:
   waspSprite: {fileID: -1290615598, guid: 1e140fa333788374aa23842c1437fc29, type: 3}
   guppySprite: {fileID: -816292572, guid: e5da49512f8b9a242a954f8ac5cc3dd7, type: 3}
   elkSprite: {fileID: -338119105, guid: 8dbe5d29af418c24580ec154c589d70f, type: 3}
+  rattiSprite: {fileID: 617486461, guid: 464a985d6be1e04499a7ff4bbbb5243b, type: 3}
   penguinSprite: {fileID: 145310839, guid: c6924097812985f42a9d59b28ba739a3, type: 3}
   horseSprite: {fileID: 203053181, guid: 79958aaa4123a0b4abd89259ecdc9645, type: 3}
   dogSprite: {fileID: -969254335, guid: b3256f7c1e1c8a040ab6ce44cf27e62f, type: 3}
@@ -2376,15 +2378,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: da104697c078daf43ba90234f582c5b1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 225.57
+      value: 227.37
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: da104697c078daf43ba90234f582c5b1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.45
+      value: 15.87
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: da104697c078daf43ba90234f582c5b1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.694985
+      value: -6.76
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: da104697c078daf43ba90234f582c5b1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2524,7 +2526,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &258250838
 PrefabInstance:
@@ -11640,6 +11642,7 @@ RectTransform:
   - {fileID: 1005835943}
   - {fileID: 584889488}
   - {fileID: 1327178335}
+  - {fileID: 1731352283}
   - {fileID: 1235702422}
   - {fileID: 1024319456}
   - {fileID: 1497795976}
@@ -23445,7 +23448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47e5a688cae600248a1662e3f62be5e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DiscoverableAnimal
-  animalName: Rat
+  animalName: Ratti
   displayName: 
   discovered: 0
 --- !u!135 &1650184982
@@ -24952,6 +24955,138 @@ MonoBehaviour:
           m_StringArgument: Fox
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1731352282
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1731352283}
+  - component: {fileID: 1731352286}
+  - component: {fileID: 1731352285}
+  - component: {fileID: 1731352284}
+  m_Layer: 5
+  m_Name: RattiIcon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1731352283
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731352282}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 968494019}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 210, y: -80}
+  m_SizeDelta: {x: 50, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1731352284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731352282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1731352285}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 228125014}
+        m_TargetAssemblyTypeName: AnimalDetailsUI, Assembly-CSharp
+        m_MethodName: ShowAnimal
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Ratti
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1731352285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731352282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 617486461, guid: 464a985d6be1e04499a7ff4bbbb5243b, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1731352286
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731352282}
+  m_CullTransparentMesh: 1
 --- !u!1 &1736453817 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7001219598506778196, guid: 57ebee36328c34f418eb8ca527bdedea, type: 3}
@@ -27325,7 +27460,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9f4a8428662f3774187ee714496ee939, type: 2}
     - target: {fileID: 919132149155446097, guid: d71edd38b2ecfd542a8096c0c4f7cf03, type: 3}
       propertyPath: m_Name
-      value: rattri (1)
+      value: ratti
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28712,7 +28847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47e5a688cae600248a1662e3f62be5e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DiscoverableAnimal
-  animalName: Pinguin
+  animalName: Penguin
   displayName: 
   discovered: 0
 --- !u!135 &2051452722

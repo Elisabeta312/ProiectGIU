@@ -102,6 +102,13 @@ public class AnimalDiscoveryTrigger : MonoBehaviour
         {
             journalHighlighter.FlashJournal();
         }
+        if (AnimalCollectionGoal.AreAllAnimalsDiscovered())
+{
+    if (QuestFeedbackUI.Instance != null)
+    {
+        QuestFeedbackUI.Instance.ShowAllAnimalsDiscoveredScreen();
+    }
+}
 
         currentAnimal = null;
     }

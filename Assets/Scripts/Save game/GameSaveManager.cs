@@ -186,6 +186,14 @@ public class GameSaveManager : MonoBehaviour
 
         data.discoveredAnimals = DiscoveredAnimalsRegistry.GetDiscoveredAnimals();
 
+        data.acquiredKeys = PlayerKeyInventory.GetAcquiredKeys();
+        data.openedCaveEntrances = CaveEntranceStateRegistry.GetOpenedEntrances();
+
+        if (QuestFeedbackUI.Instance != null)
+        {
+            data.allAnimalsScreenAlreadyShown = QuestFeedbackUI.Instance.GetAllAnimalsScreenAlreadyShown();
+        }
+
         return data;
     }
 
@@ -229,6 +237,14 @@ public class GameSaveManager : MonoBehaviour
         );
 
         DiscoveredAnimalsRegistry.SetDiscoveredAnimals(pendingLoadData.discoveredAnimals);
+
+        PlayerKeyInventory.SetAcquiredKeys(pendingLoadData.acquiredKeys);
+        CaveEntranceStateRegistry.SetOpenedEntrances(pendingLoadData.openedCaveEntrances);
+
+        if (QuestFeedbackUI.Instance != null)
+            {
+                QuestFeedbackUI.Instance.SetAllAnimalsScreenAlreadyShown(pendingLoadData.allAnimalsScreenAlreadyShown);
+            }
 
         Debug.Log("Loaded save: " + pendingLoadData.saveName);
 

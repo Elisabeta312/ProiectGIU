@@ -18,4 +18,7 @@ public class SaveData
     public float playerRotZ;
 
     public List<string> discoveredAnimals = new List<string>();
+    public List<string> acquiredKeys = new List<string>();
+    public List<string> openedCaveEntrances = new List<string>();
+    public bool allAnimalsScreenAlreadyShown;
 }

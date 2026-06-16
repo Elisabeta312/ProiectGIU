@@ -2,9 +2,15 @@ using UnityEngine;
 
 public class PauseMenuToggle : MonoBehaviour
 {
+    [Header("Main Game Screen UI")]
     public GameObject PauseMenu;
     public GameObject DiscoveredAnimalsMenu;
     public GameObject TutorialScreen;
+
+    [Header("Cave Related Screen UI")]
+    public GameObject allAnimalsDiscoveredScreenUI;
+    public GameObject keyScreenUI;
+    public GameObject caveOpenScreenUI;
 
     public MonoBehaviour playerMovement;
     public MonoBehaviour mouseLook;
@@ -21,21 +27,39 @@ public class PauseMenuToggle : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.Escape))
-        {
-            if (TutorialScreen.activeInHierarchy)
-            {
-                TutorialScreen.SetActive(false);
-                
-                return;
-            }
-            if (DiscoveredAnimalsMenu.activeInHierarchy)
-            {
-                DiscoveredAnimalsMenu.SetActive(false);
-                return;
-            }
+{
+    if (TutorialScreen.activeInHierarchy)
+    {
+        TutorialScreen.SetActive(false);
+        return;
+    }
 
-            SetPaused(!isPaused);
-        }
+    if (DiscoveredAnimalsMenu.activeInHierarchy)
+    {
+        DiscoveredAnimalsMenu.SetActive(false);
+        return;
+    }
+
+    if (allAnimalsDiscoveredScreenUI != null && allAnimalsDiscoveredScreenUI.activeInHierarchy)
+    {
+        allAnimalsDiscoveredScreenUI.SetActive(false);
+        return;
+    }
+
+    if (keyScreenUI != null && keyScreenUI.activeInHierarchy)
+    {
+        keyScreenUI.SetActive(false);
+        return;
+    }
+
+    if (caveOpenScreenUI != null && caveOpenScreenUI.activeInHierarchy)
+    {
+        caveOpenScreenUI.SetActive(false);
+        return;
+    }
+
+    SetPaused(!isPaused);
+}
 
         if (Input.GetKeyUp(KeyCode.T))
         {

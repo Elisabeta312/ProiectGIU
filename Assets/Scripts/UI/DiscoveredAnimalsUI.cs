@@ -39,7 +39,7 @@ public class DiscoveredAnimalsUI : MonoBehaviour
     public Image commonSnipeIcon;
     public Image goldenPloverIcon;
     public Image starlingIcon;
-    public Image waxwingIcon;
+    public Image spangledCotingaIcon;
     public Image greatTitIcon;
     public Image macawIcon;
     public Image greatAukIcon;
@@ -86,7 +86,7 @@ public class DiscoveredAnimalsUI : MonoBehaviour
         SetIcon(commonSnipeIcon, "Common Snipe");
         SetIcon(goldenPloverIcon, "Golden Plover");
         SetIcon(starlingIcon, "Starling");
-        SetIcon(waxwingIcon, "Waxwing");
+        SetIcon(spangledCotingaIcon, "Spangled Cotinga");
         SetIcon(greatTitIcon, "Great Tit");
         SetIcon(macawIcon, "Blue and Yellow Macaw");
         SetIcon(greatAukIcon, "Great Auk");

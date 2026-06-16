@@ -24,6 +24,8 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene(savesMenuSceneName);
     }
 
+
+
     public void PlayWithFriend()
     {
         Debug.Log("Play with a friend pressed.");
